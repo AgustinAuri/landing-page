@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+@mixin container {
+  width: min(calc(100% - 2rem), $container-max-width);
+  margin-inline: auto;
+}
+
+@mixin section-spacing {
+  padding: 5.5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 4.5rem 0;
+  }
+}

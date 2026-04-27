@@ -1,0 +1,23 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-spacing;
+}
+
+.section--muted {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(229, 229, 229, 0.5));
+}
+
+.section--contrast {
+  background: $color-black;
+  color: $color-white;
+}

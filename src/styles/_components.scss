@@ -1,0 +1,382 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.topbar {
+  @include container;
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  backdrop-filter: blur(18px);
+  box-shadow: $shadow-card;
+}
+
+.brand {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 1.25rem;
+  color: $color-gray-500;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a:focus-visible {
+  color: $color-black;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 52px;
+  padding: 0.95rem 1.5rem;
+  background: $color-accent;
+  color: $color-accent-contrast;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    transform $transition-base,
+    background-color $transition-base,
+    color $transition-base,
+    border-color $transition-base;
+  cursor: pointer;
+}
+
+.button--secondary,
+.button--ghost {
+  background: transparent;
+  color: $color-black;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.button--whatsapp {
+  width: fit-content;
+  background: $color-white;
+  color: $color-black;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: $color-gray-500;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-heading--split {
+  grid-template-columns: 1.5fr 1fr;
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h2,
+.hero h1 {
+  margin: 0;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3.3rem, 8vw, 6.5rem);
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  max-width: 14ch;
+}
+
+.hero__lede,
+.section-heading--split p,
+.story__content p,
+.contact__intro p,
+.info-card p,
+.hero-card p,
+.metric span {
+  color: $color-gray-500;
+  line-height: 1.75;
+}
+
+.hero {
+  padding-top: 3rem;
+}
+
+.hero__grid,
+.story__grid,
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero__content {
+  padding: 2rem 0;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero__panel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card {
+  width: min(100%, 480px);
+  padding: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: $radius-xl;
+  box-shadow: $shadow-soft;
+}
+
+.hero-card__label,
+.info-card__index {
+  color: $color-gray-500;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-card h2,
+.info-card h3 {
+  margin: 0.85rem 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.hero-card__list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.metric {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.metric strong {
+  font-size: 1.75rem;
+}
+
+.story__content {
+  display: grid;
+  gap: 1rem;
+}
+
+.story__quote {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+.story__quote span {
+  height: 1px;
+  margin-top: 1rem;
+  background: $color-black;
+}
+
+.story__quote p {
+  margin: 0;
+  color: $color-black;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.info-card,
+.pill-card,
+.contact-form {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: $radius-lg;
+}
+
+.info-card {
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: $shadow-card;
+}
+
+.expertise__banner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pill-card {
+  padding: 1.35rem 1.4rem;
+  background: $color-gray-100;
+  line-height: 1.65;
+}
+
+.contact__intro {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+.social-links svg,
+.button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: $shadow-soft;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.55rem;
+  color: $color-gray-200;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: $color-white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: $radius-sm;
+  outline: none;
+  transition:
+    border-color $transition-base,
+    background-color $transition-base,
+    transform $transition-base;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer {
+  padding: 1.5rem 0 2rem;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: $color-gray-500;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+  .topbar,
+  .hero__grid,
+  .story__grid,
+  .contact__grid,
+  .section-heading--split,
+  .card-grid,
+  .expertise__banner,
+  .footer__content {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar {
+    border-radius: 28px;
+  }
+
+  .topbar__nav {
+    flex-wrap: wrap;
+  }
+
+  .hero__panel {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding: 1rem;
+  }
+
+  .topbar__nav,
+  .button--ghost {
+    display: none;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+  }
+
+  .hero-card,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .metric,
+  .story__quote {
+    grid-template-columns: 1fr;
+  }
+}
