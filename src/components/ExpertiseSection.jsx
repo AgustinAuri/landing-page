@@ -1,4 +1,5 @@
 import { SectionReveal } from "./SectionReveal";
+import officeImage from "../../recursos/ChatGPT Image 28 abr 2026, 06_42_00 p.m..png";
 
 const specialties = [
   {
@@ -50,6 +51,12 @@ export function ExpertiseSection() {
         </div>
 
         <div className="expertise__banner">
+          <div className="expertise__media">
+            <img
+              src={officeImage}
+              alt="Interior de un consultorio premium listo para atencion"
+            />
+          </div>
           {differentiators.map((item) => (
             <div key={item} className="pill-card">
               {item}

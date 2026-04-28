@@ -3,6 +3,7 @@ import { HeroSection } from "./components/HeroSection";
 import { StorySection } from "./components/StorySection";
 import { ExpertiseSection } from "./components/ExpertiseSection";
 import { ContactSection } from "./components/ContactSection";
+import { LocationSection } from "./components/LocationSection";
 import { Footer } from "./components/Footer";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <StorySection />
         <ExpertiseSection />
         <ContactSection />
+        <LocationSection />
       </main>
       <Footer />
     </div>

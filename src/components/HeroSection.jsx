@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionReveal } from "./SectionReveal";
+import heroImage from "../../recursos/ChatGPT Image 28 abr 2026, 06_41_52 p.m..png";
+import accentImage from "../../recursos/ChatGPT Image 28 abr 2026, 06_41_56 p.m..png";
 
 const trustMetrics = [
   { value: "48h", label: "para lanzar una version demo personalizada" },
@@ -18,7 +20,7 @@ export function HeroSection() {
             confianza antes de la primera llamada.
           </h1>
           <p className="hero__lede">
-            Diseñada para abogados, odontologos, coaches y personal trainers
+            Diseniada para abogados, odontologos, coaches y personal trainers
             que necesitan una web clara, refinada y lista para personalizar con
             su propia marca.
           </p>
@@ -50,22 +52,39 @@ export function HeroSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
-          <div className="hero-card">
-            <p className="hero-card__label">Edicion White Label</p>
-            <h2>Minimalismo tecnico. Conversion premium.</h2>
-            <p>
-              Un layout limpio, secciones estrategicas y una narrativa adaptable
-              para servicios de alto valor.
-            </p>
-            <div className="hero-card__list">
-              {trustMetrics.map((metric) => (
-                <div key={metric.value} className="metric">
-                  <strong>{metric.value}</strong>
-                  <span>{metric.label}</span>
-                </div>
-              ))}
+          <article className="hero-card hero-card--visual">
+            <div className="hero-card__media">
+              <img
+                src={heroImage}
+                alt="Paciente en una consulta odontologica premium"
+              />
             </div>
-          </div>
+
+            <div className="hero-card__body">
+              <div className="hero-card__topline">
+                <p className="hero-card__label">Edicion White Label</p>
+                <img
+                  className="hero-card__accent"
+                  src={accentImage}
+                  alt="Icono visual de cuidado dental"
+                />
+              </div>
+
+              <h2>Minimalismo tecnico. Conversion premium.</h2>
+              <p>
+                Un layout limpio, secciones estrategicas y una narrativa
+                adaptable para servicios de alto valor.
+              </p>
+              <div className="hero-card__list">
+                {trustMetrics.map((metric) => (
+                  <div key={metric.value} className="metric">
+                    <strong>{metric.value}</strong>
+                    <span>{metric.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
         </motion.div>
       </div>
     </SectionReveal>
