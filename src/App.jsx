@@ -14,8 +14,8 @@ function App() {
         <HeroSection />
         <StorySection />
         <ExpertiseSection />
-        <ContactSection />
         <LocationSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
